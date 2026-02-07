@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Valentine's</title>
+
+  <!-- Web Icon (Favicon) -->
+  <link rel="icon" href="assets/dumy/email.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Caveat:wght@400;700&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="vintage-texture"></div>
+
+  <!-- Floating Hearts Background -->
+  <div class="floating-hearts-container" id="floatingHeartsContainer"></div>
+
+  <!-- Hidden Audio Element - Using your own music -->
+  <audio id="backgroundMusic" loop>
+    <source src="assets/music/Christina Perri - A Thousand Years.mp3" type="audio/mpeg">
+    <source src="assets/music/Christina Perri - A Thousand Years.mp3" type="audio/ogg">
+    <!-- Fallback for browsers that don't support audio -->
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Music Control Button -->
+  <div class="music-control" id="musicControl" onclick="toggleMusic()" title="Toggle Music">
+    <i class="fas fa-music" id="musicIcon"></i>
+  </div>
+
+  <div class="album-container">
+    <!-- Album Cover - Now styled as a real mailbox -->
+    <div class="album-cover" id="albumCover" onclick="openAlbum()">
+      <img src="assets/dumy/paperclip.png" class="paperclip" alt="paperclip" style="width:50px;">
+      <div class="mail-slot"></div>
+      <div class="cover-content">
+        <h1 class="album-title">Our Love Letters</h1>
+        <p class="album-subtitle">A Keepsake of Our Moments</p>
+      </div>
+    </div>
+
+    <!-- Album Pages -->
+    <div class="album-pages" id="albumPages" style="display: none;">
+      <div class="page-indicator">Halaman <span id="currentPage">1</span> dari 4</div>
+
+      <!-- Page 1 -->
+      <div class="page" id="page1">
+        <div class="paper-tape tape-top"></div>
+        <div class="paper-clip"></div>
+
+        <!-- Aesthetic Photos from dummy folder -->
+        <img src="assets/dumy/heart.png" class="floating-decor"
+          style="position: absolute; top: 80px; right: 60px; width: 60px; opacity: 0.7; animation: float 4s ease-in-out infinite; z-index: 1;">
+        <img src="assets/dumy/birds.png" class="floating-decor"
+          style="position: absolute; top: 60px; left: 40px; width: 70px; opacity: 0.6; animation: float 5s ease-in-out infinite; animation-delay: 1s; z-index: 1;">
+        <img src="assets/dumy/bouquet.png" class="floating-decor"
+          style="position: absolute; bottom: 100px; right: 50px; width: 80px; opacity: 0.65; animation: float 4.5s ease-in-out infinite; animation-delay: 0.5s; z-index: 1;">
+        <img src="assets/dumy/kiss.png" class="floating-decor"
+          style="position: absolute; top: 180px; right: 30px; width: 50px; opacity: 0.7; animation: float 3.5s ease-in-out infinite; animation-delay: 1.5s; z-index: 1;">
+        <img src="assets/dumy/love-letter.png" class="floating-decor"
+          style="position: absolute; bottom: 180px; right: 150px; width: 70px; opacity: 0.6; animation: float 4s ease-in-out infinite; animation-delay: 2s; z-index: 1;">
+        <img src="assets/dumy/loveicon.png" class="floating-decor"
+          style="position: absolute; top: 300px; left: 30px; width: 45px; opacity: 0.65; animation: float 3s ease-in-out infinite; animation-delay: 0.8s; z-index: 1;">
+        <img src="assets/dumy/notes.png" class="floating-decor"
+          style="position: absolute; bottom: 50px; right: 120px; width: 55px; opacity: 0.6; animation: float 4.2s ease-in-out infinite; animation-delay: 1.2s; z-index: 1;">
+
+        <div class="doodle" style="top: 50px; right: 50px;">💕</div>
+        <div class="doodle" style="top: 50px; left: 50px;">🦋</div>
+        <div class="doodle" style="top: 90px; left: 90px;">🦋</div>
+        <div class="doodle" style="bottom: 80px; right: 100px;">💖</div>
+        <div class="doodle" style="top: 150px; left: 80px;">💝</div>
+        <div class="doodle" style="bottom: 120px; left: 150px;">💗</div>
+        <div class="doodle" style="top: 200px; right: 80px;">💓</div>
+        <div class="doodle" style="bottom: 50px; right: 200px;">💘</div>
+        <h2 class="handwritten-title">Surat Pembuka</h2>
+
+        <div class="love-letter">
+          <div class="letter-header">Dear Makailla..</div>
+          <div class="letter-body">
+            <p>sayang…<br>
+              lucu ya kalo diinget-inget.<br>
+              kita yang awalnya cuma iseng, cuma <em>“yaudah jalanin aja dulu..”</em>,<br>
+              eh malah jadi sejauh ini.</p>
+
+            <p>tiap hari call,<br>
+              tiap hari ribut hal kecil,<br>
+              kadang ngambek, kadang capek sendiri,<br>
+              tapi ujung-ujungnya tetep balik lagi.<br>
+              balik sayang-sayangan lagi.</p>
+
+            <p>sebenernya banyak banget yang pengen aku omongin ke kamu.<br>
+              tapi intinya satu…<br>
+              aku bangga sama kamu.<br>
+              beneran.</p>
+
+            <p>makasih ya sayang,<br>
+              udah kuat sejauh ini,<br>
+              udah mau bertahan di hubungan yang jaraknya aja<br>
+              sebenernya bisa bikin orang nyerah.</p>
+
+            <p>jujur aku sering sedih.<br>
+              apalagi kalo lagi kangen,<br>
+              tapi cuma bisa denger suara kamu.<br>
+              pengen ketemu, pengen peluk,<br>
+              tapi cuma bisa bilang <em>“sabar ya”</em>.</p>
+
+            <p>sebenernya aku sadar,<br>
+              kalo kamu lagi bete, lagi badmood,<br>
+              itu bukan karena kamu kenapa-kenapa.<br>
+              itu tandanya kamu capek,<br>
+              itu tandanya kamu pengen ketemu aku…<br>
+              tapi keadaannya belum bisa.</p>
+
+            <p>dan gapapa.<br>
+              selama kamu masih di sini,<br>
+              aku juga ga akan ke mana-mana.</p>
+
+            <p>jadi jangan pergi ya sayang.<br>
+              kita jaga hubungan ini bareng-bareng.<br>
+              aku pengen kamu jadi rumah aku… lamaaa banget.<br>
+              selama kamu mau, aku bakal selalu ada buat kamu.</p>
+
+            <p>banyak hal yang pengen aku lewatin bareng kamu.<br>
+              prosesnya pasti panjang,<br>
+              capeknya juga pasti ada.<br>
+              tapi aku pengen kita lewatin semuanya bareng.<br>
+              di setiap badai, kita sabar.<br>
+              biar nanti, kita bisa dapetin apa yang kita mau.</p>
+          </div>
+          <div class="letter-signature">
+            With love,<br>Angga 🤍
+          </div>
+        </div>
+
+        <div class="sticky-note" style="float:right; margin:20px;">
+          <p class="handwritten" style="font-size:16px;">
+            "aku harap kamu suka sama web ini, aku bikin ini spesial buat kamu dan aku mau kamu baca ini semua
+            semoga kamu terus sayangg sama akuu selamanyaaa😊"
+          </p>
+        </div>
+
+        <button class="reveal-btn" onclick="revealMessage()">Klik untuk pesan rahasia!</button>
+        <div class="hidden-message" id="hiddenMessage">
+          <p class="handwritten">
+            💌 buka page selanjutnya ya sayang.. masi banyak hal hal yang bisa bikin kamu bahagiaa, maaf ya sayang kamu
+            jadi nunggu lama buat liat hasil web ini😊
+          </p>
+        </div>
+      </div>
+
+      <!-- Page 2 -->
+      <div class="page" id="page2" style="display:none;">
+        <div class="paper-tape tape-left"></div>
+
+        <!-- Aesthetic Photos from dummy folder for Page 2 -->
+        <img src="assets/dumy/bouquet.png" class="floating-decor"
+          style="position: absolute; top: 50px; right: 70px; width: 70px; opacity: 0.65; animation: float 4s ease-in-out infinite; z-index: 1;">
+        <img src="assets/dumy/heart.png" class="floating-decor"
+          style="position: absolute; top: 100px; left: 50px; width: 55px; opacity: 0.7; animation: float 4.5s ease-in-out infinite; animation-delay: 1s; z-index: 1;">
+        <img src="assets/dumy/mail-gift.png" class="floating-decor"
+          style="position: absolute; bottom: 80px; right: 60px; width: 65px; opacity: 0.6; animation: float 3.5s ease-in-out infinite; animation-delay: 0.7s; z-index: 1;">
+        <img src="assets/dumy/birds.png" class="floating-decor"
+          style="position: absolute; top: 200px; right: 40px; width: 60px; opacity: 0.6; animation: float 5s ease-in-out infinite; animation-delay: 1.5s; z-index: 1;">
+        <img src="assets/dumy/kiss.png" class="floating-decor"
+          style="position: absolute; bottom: 150px; left: 50px; width: 50px; opacity: 0.7; animation: float 3.8s ease-in-out infinite; animation-delay: 2s; z-index: 1;">
+        <img src="assets/dumy/notes.png" class="floating-decor"
+          style="position: absolute; top: 300px; left: 35px; width: 50px; opacity: 0.65; animation: float 4.2s ease-in-out infinite; animation-delay: 0.5s; z-index: 1;">
+
+        <div class="doodle" style="top:80px; left:30px;">📸</div>
+        <div class="doodle" style="top: 120px; right: 50px;">💞</div>
+        <div class="doodle" style="bottom: 100px; left: 80px;">🥰</div>
+        <div class="doodle" style="top: 180px; right: 120px;">💓</div>
+        <div class="doodle" style="bottom: 60px; left: 180px;">💘</div>
+        <div class="doodle" style="top: 220px; left: 40px;">💕</div>
+        <div class="doodle" style="bottom: 120px; right: 60px;">💖</div>
+        <h2 class="handwritten-title">Galeri Kenangan</h2>
+
+        <div class="photo-grid">
+          <div class="polaroid" data-type="image">
+            <img src="assets/photos/p1.jpeg" alt="Pertemuan Pertama">
+            <div class="polaroid-caption">Pertemuan Pertama 💕</div>
+            kita mungkin ketemu lewat game,<br>
+            tapi perasaan ini ga pernah main-main.
+            </p>
+          </div>
+          <div class="polaroid" data-type="video" data-src="assets/photos/WhatsApp Video 2025-12-13 at 00.54.15.mp4"
+            style="transform: rotate(5deg);">
+            <div class="video-play-icon"><img src="assets/dumy/play-button.png" alt="Play"
+                style="width:50px; height:50px;"></div>
+            <div class="polaroid-caption">Luv u beb 😊</div>
+          </div>
+          <div class="polaroid" data-type="image" style="transform: rotate(-1deg);">
+            <img src="assets/photos/kailla.jpg" alt="Kailla Cantik">
+            <div class="polaroid-caption">Minta buat dijadiin di Web 🌹</div>
+            ini foto pertama yang bikin aku mikir,<br>
+            kok bisa ya aku sesuka ini sama satu orang
+            </p>
+          </div>
+        </div>
+
+        <div class="sticky-note pink" style="margin:30px auto;">
+          <p class="handwritten" style="font-size:16px;text-align:center;">
+            “aku pengen ketemu kamu bukan cuma buat foto, atau sekadar tuker pap. aku pengen beneran ada di hidup kamu.”
+            <br><br>mungkin hari ini aku hanya bisa liat foto kamu denger suara kamu dari call tapi semoga nanti kita
+            bisa ketemu yaa 💖
+          </p>
+        </div>
+
+        <div class="mailbox-mini" onclick="openEnvelope()">
+          <div class="mailbox-slot"></div>
+          <div class="mailbox-content">🤎<br>buka dong suratnya!</div>
+        </div>
+      </div>
+
+      <!-- Page 3 - Momen Spesial (with Notes) -->
+      <div class="page" id="page3" style="display:none;">
+        <div class="paper-tape tape-left"></div>
+
+        <!-- Aesthetic Photos from dummy folder for Page 3 -->
+        <img src="assets/dumy/love-letter.png" class="floating-decor"
+          style="position: absolute; top: 60px; right: 50px; width: 65px; opacity: 0.65; animation: float 4.3s ease-in-out infinite; z-index: 1;">
+        <img src="assets/dumy/loveicon.png" class="floating-decor"
+          style="position: absolute; top: 90px; left: 35px; width: 50px; opacity: 0.7; animation: float 3.5s ease-in-out infinite; animation-delay: 0.8s; z-index: 1;">
+        <img src="assets/dumy/heart.png" class="floating-decor"
+          style="position: absolute; bottom: 100px; right: 70px; width: 60px; opacity: 0.7; animation: float 4s ease-in-out infinite; animation-delay: 1.2s; z-index: 1;">
+        <img src="assets/dumy/bouquet.png" class="floating-decor"
+          style="position: absolute; bottom: 120px; left: 40px; width: 75px; opacity: 0.6; animation: float 4.5s ease-in-out infinite; animation-delay: 1.8s; z-index: 1;">
+        <img src="assets/dumy/kiss.png" class="floating-decor"
+          style="position: absolute; top: 180px; right: 35px; width: 45px; opacity: 0.7; animation: float 3.8s ease-in-out infinite; animation-delay: 0.5s; z-index: 1;">
+        <img src="assets/dumy/birds.png" class="floating-decor"
+          style="position: absolute; top: 250px; left: 45px; width: 65px; opacity: 0.6; animation: float 5s ease-in-out infinite; animation-delay: 1.5s; z-index: 1;">
+
+        <h2 class="handwritten-title">✨ Momen Spesial Kita ✨</h2>
+
+        <!-- Notes untuk Momen -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin:25px 0;">
+          <div class="sticky-note animated" style="width:140px; min-height:110px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              💬 <strong>“I’ll love you even when my heart is tired, because loving you feels like home.”</strong><br>
+              padahal awalnya cuman ketemu di gta ehh malah jadi sejauh ini 💕
+            </p>
+          </div>
+
+          <div class="sticky-note pink animated" style="width:140px; min-height:110px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              🎮 <strong>“I hope you feel how deeply you are loved, even without me saying a word.”</strong><br>
+              dari game bisa sampe segininya dan banyak hal unik yang ga kita rencanain itu terjadi lucu ya..
+            </p>
+          </div>
+
+          <div class="sticky-note blue animated" style="width:140px; min-height:110px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              🌙 <strong>“I hope I am the last thought that makes you smile before you fall asleep.”</strong><br>
+              tiap beres main gta kita selalu nyempetin ngobrol sampe kamu disuruh mama tidur..
+            </p>
+          </div>
+
+          <div class="sticky-note animated" style="width:140px; min-height:110px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              💖 <strong>2 juli 2025</strong><br>
+              “My love for you is something I am proud to show to the world.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Notes untuk Info -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin:25px 0;">
+          <div class="sticky-note pink animated" style="width:130px; min-height:100px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              💕 <strong>For u lah pokonya</strong><br>
+              “Your happiness becomes my happiness, and loving you feels complete.”
+            </p>
+          </div>
+
+          <div class="sticky-note blue animated" style="width:130px; min-height:100px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              🎈 <strong>One day</strong><br>
+              “No matter how far we are, I am holding on to the hope that one day soon, I will finally have you here
+              with me.”
+            </p>
+          </div>
+        </div>
+
+        <!-- Quote Notes (2 notes side by side) -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin:20px 0;">
+          <div class="sticky-note pink animated" style="width:200px; min-height:90px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              sebenernya masi banyak momen momen kita dulu yang buat kita bisa mikir banyak tapi seengga nya dengan
+              adanya aku buat ini kamu selalu inget gimana kita dulu 💝
+              dan semua yang aku ketik di note ini yang paling aku mau wujudin when nya aku dan whennya kamu bisa
+              terwujud <br>
+            </p>
+          </div>
+
+          <div class="sticky-note blue animated" style="width:200px; min-height:90px;">
+            <p class="handwritten" style="font-size:14px; text-align:center;">
+              "I don’t know where life will take me,
+              but I know one thing
+              I want you in every step along the way"✨<br>
+              <strong>tetep jadi kailla yang angga kenal ya</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page 4 - Valentine's Day (Enhanced Aesthetic) -->
+      <div class="page" id="page4" style="display:none;">
+        <div class="paper-tape tape-left"></div>
+
+        <!-- Aesthetic Photos from dummy folder for Page 4 Valentine -->
+        <img src="assets/dumy/bouquet.png" class="floating-decor"
+          style="position: absolute; top: 40px; right: 60px; width: 80px; opacity: 0.7; animation: float 4.5s ease-in-out infinite; z-index: 1;">
+        <img src="assets/dumy/heart.png" class="floating-decor"
+          style="position: absolute; top: 70px; left: 50px; width: 65px; opacity: 0.75; animation: float 4s ease-in-out infinite; animation-delay: 0.8s; z-index: 1;">
+        <img src="assets/dumy/kiss.png" class="floating-decor"
+          style="position: absolute; bottom: 100px; right: 70px; width: 55px; opacity: 0.7; animation: float 3.8s ease-in-out infinite; animation-delay: 1.5s; z-index: 1;">
+        <img src="assets/dumy/love-letter.png" class="floating-decor"
+          style="position: absolute; bottom: 140px; left: 60px; width: 70px; opacity: 0.65; animation: float 4.2s ease-in-out infinite; animation-delay: 2s; z-index: 1;">
+        <img src="assets/dumy/birds.png" class="floating-decor"
+          style="position: absolute; top: 200px; right: 45px; width: 60px; opacity: 0.6; animation: float 5s ease-in-out infinite; animation-delay: 1s; z-index: 1;">
+        <img src="assets/dumy/loveicon.png" class="floating-decor"
+          style="position: absolute; top: 280px; left: 40px; width: 50px; opacity: 0.7; animation: float 3.5s ease-in-out infinite; animation-delay: 0.5s; z-index: 1;">
+
+        <!-- Special floating hearts for Valentine -->
+        <div class="doodle" style="top: 60px; right: 120px; font-size: 35px;">💖</div>
+        <div class="doodle" style="top: 100px; left: 100px; font-size: 30px;">💝</div>
+        <div class="doodle" style="bottom: 80px; right: 150px; font-size: 32px;">💕</div>
+        <div class="doodle" style="top: 180px; left: 70px; font-size: 28px;">💘</div>
+        <div class="doodle" style="bottom: 120px; left: 120px; font-size: 33px;">💗</div>
+        <div class="doodle" style="top: 250px; right: 100px; font-size: 30px;">💓</div>
+
+        <h2 class="handwritten-title" style="color: #c94b4b; font-size: 36px;">💝 Happy Valentine's Day 💝</h2>
+
+        <!-- Valentine Love Letter with special styling -->
+        <div class="love-letter"
+          style="margin:25px 0; background: linear-gradient(135deg, #fff0f5 0%, #ffe4e9 100%); border: 2px solid #ffc0cb;">
+          <div class="letter-header" style="text-align:center; font-size: 26px; color: #c94b4b;">🎀Happy Valentine
+            Babe🎀</div>
+          <div class="letter-body" style="text-align:center;">
+            <p>Happy Valentine, ayang.
+              meski jarak bikin kita engga saling genggam hari ini,
+              perasaanku ke kamu tetap penuh, utuh, dan ga kemana manaa..
+              makasih yaa sayang udah bertahan sejauh ini dimana hubungan yang ga semua orang bisa lewatin ini semua
+              dengan mudahh. dimanaa kita hanya mengandalkan call dan hanya bisa liat kamu dari foto tapii
+              semoga taun depan atau bulan depan kita bisaa ketemu dan terus bareng bareng ya sayang...
+            </p>
+          </div>
+        </div>     
+
+        <!-- Photo with special Valentine frame -->
+        <div style="text-align:center; margin:30px 0;">
+          <div class="polaroid"
+            style="margin:0 auto; transform: rotate(-3deg); border: 2px solid #ffc0cb; background: linear-gradient(135deg, #fff 0%, #ffe4e9 100%);">
+            <img src="assets/photos/image.png" alt="My Valentine">
+            <div class="polaroid-caption" style="color: #c94b4b; font-size: 20px;">💘My Forever Valentine💘</div>
+          </div>
+        </div>
+
+        <!-- Romantic Poem with heart decoration -->
+        <div class="love-letter"
+          style="margin:20px 0; background: linear-gradient(135deg, #fffafc 0%, #fff0f5 100%); border: 2px dashed #ffc0cb;">
+          <div class="letter-body" style="text-align:center;">
+            <p style="font-size: 24px; line-height: 1.8;"><em style="color: #c94b4b;">Even though distance still
+                separates us, my heart is always close to you.
+                I hope that one day, I can celebrate this day while holding your hand.</em><br>
+              <em style="color: #c94b4b;">No one in this world is as special as you.</em><br>
+              <em style="color: #c94b4b;">Happy Valentine’s Day, my love</em> 🌹
+            </p>
+          </div>
+        </div>
+
+        <!-- Final Valentine Message with special box -->
+        <div class="love-letter"
+          style="margin-top:25px; background: linear-gradient(135deg, #fff5f7 0%, #ffe8ec 100%); border: 3px solid #ffb6c1; box-shadow: 0 8px 20px rgba(201, 75, 75, 0.2);">
+          <div class="letter-body" style="text-align:center;">
+            <p style="font-size: 28px;"><strong style="color: #c94b4b;">Selamat Hari Valentine, Babe!</strong></p>
+            <p>ssemoga kita bisa terus bareng bareng ya sayang
+              jalanin semuanya pelan pelan tapi bareng bareng
+              aku harap ke depannya aku bisa selalu ada buat kamu
+              dan semoga di valentine selanjutnya aku bisa beneran ada di samping kamu
+              nemenin kamu langsung, bukan cuma lewat call lagi
+              pengen rasanya pacaran beneran sama kamu
+              makasih ya sayang, udah sejauh ini sama aku
+              selamat hari valentine 🤍🌹💕</p>
+          </div>
+          <div class="letter-signature" style="font-size: 26px; color: #c94b4b;">Forever & Always Yours,<br>Angga 💖
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation - Fixed at bottom -->
+      <div class="page-nav">
+        <button class="page-btn" id="prevBtn" onclick="changePage(-1)" disabled>← Sebelumnya</button>
+        <button class="page-btn" onclick="goToCover()">Tutup Surat</button>
+        <button class="page-btn" id="nextBtn" onclick="changePage(1)">Selanjutnya →</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
